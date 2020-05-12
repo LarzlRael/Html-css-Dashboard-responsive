@@ -1,0 +1,390 @@
+.fas {
+  font-size: 16px;
+  padding: 0 15px;
+}
+
+.fa-home {
+  color: #ff8888;
+}
+
+.fa-grip-vertical {
+  color: #ffc080;
+}
+
+.fa-chart-bar {
+  color: #8bff6f;
+}
+
+.fa-inbox {
+  color: #5dffc7;
+}
+
+.fa-user-alt {
+  color: #626dff;
+}
+
+.fa-cog {
+  color: #a2a4c5;
+}
+
+.fa-question-circle {
+  color: #a2a4c5;
+}
+
+.fa-comment-alt {
+  color: #a2a4c5;
+}
+
+.fa-map-marker-alt {
+  margin: -15px;
+}
+
+.fa-users {
+  color: #b32fff;
+}
+
+.fa-bell {
+  color: #7a6bff;
+}
+
+.fa-bars {
+  color: #a2a4c5;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+.container .dashboard {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 1px 2px 5px 0px #e7e7e7;
+}
+.container .dashboard .head {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.container .dashboard .head .title {
+  font-size: 17px;
+}
+.container .dashboard .head .fa-bars {
+  font-size: 18px;
+}
+.container .dashboard .head .fa-bars:hover {
+  cursor: pointer;
+}
+.container .dashboard a {
+  padding: 12px 10px;
+  text-decoration: none;
+}
+.container .dashboard a {
+  font-family: "Roboto";
+  color: #85869d;
+  font-size: 13px;
+}
+.container .dashboard a:hover {
+  background: #f2f2f2;
+}
+.container .dashboard .title {
+  color: #85869d;
+  font-family: "Roboto";
+  text-align: center;
+}
+.container .header .logo {
+  font-family: "Open Sans";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.container .header .logo .informacion .nombre {
+  font-weight: bold;
+  font-size: 14px;
+}
+.container .header .logo .informacion .extra {
+  color: #c8c7cf;
+  font-weight: normal;
+  font-size: 12px;
+}
+.container .header .head {
+  display: flex;
+  justify-content: space-between;
+  background: #fcfcfc;
+  height: 75px;
+  align-items: center;
+  padding: 20px;
+}
+.container .header .head .busqueda .input {
+  border-radius: 30px;
+  padding: 6px;
+  width: 300px;
+  border: 1px solid #ccc;
+  font-family: "Roboto";
+  font-size: 14px;
+  color: gray;
+}
+.container .header .head .busqueda .input::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: left;
+}
+.container .header .contenido {
+  font-family: "Roboto";
+  background: #fcfcfc;
+}
+.container .header .contenido .first-row {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: minmax(250px, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+.container .header .contenido .first-row .chart {
+  background: url("https://www.excel-easy.com/data-analysis/images/charts/column-chart.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 1px 2px 5px 0px #e7e7e7;
+}
+.container .header .contenido .first-row .chart:hover {
+  box-shadow: 2px 2px 5px 1px #cccccc;
+}
+.container .header .contenido .first-row .info {
+  transition: 0.3s ease all;
+  background: #fff;
+  padding: 20px;
+  font-size: 13px;
+  box-shadow: 1px 2px 5px 0px #e7e7e7;
+}
+.container .header .contenido .first-row .info .title {
+  display: flex;
+  justify-content: space-between;
+}
+.container .header .contenido .first-row .info .title .titulo {
+  color: #9287ff;
+}
+.container .header .contenido .first-row .info .title span {
+  color: #c2c3d1;
+}
+.container .header .contenido .first-row .info .group p {
+  color: #c2c3d1;
+}
+.container .header .contenido .first-row .info .group .infomacion .content {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .header .contenido .first-row .info .group .infomacion .content span {
+  color: #a6a2c2;
+}
+.container .header .contenido .first-row .info:hover {
+  box-shadow: 2px 2px 5px 1px #cccccc;
+}
+.container .header .contenido .second-row {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 65% 1fr;
+  grid-template-rows: minmax(200px, 1fr);
+  gap: 20px;
+}
+.container .header .contenido .second-row .perfiles {
+  transition: 0.3s ease all;
+  box-shadow: 1px 2px 5px 0px #e7e7e7;
+  padding: 20px;
+  background: #fff;
+}
+.container .header .contenido .second-row .perfiles:hover {
+  box-shadow: 2px 2px 5px 1px #cccccc;
+}
+.container .header .contenido .second-row .perfiles .header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+.container .header .contenido .second-row .perfiles .header .title {
+  color: #767791;
+}
+.container .header .contenido .second-row .perfiles .header .month {
+  color: #767791;
+}
+.container .header .contenido .second-row .perfiles .table {
+  color: #767791;
+  font-size: 14px;
+  width: 100%;
+  margin: auto;
+}
+.container .header .contenido .second-row .perfiles .table table {
+  width: 100%;
+}
+.container .header .contenido .second-row .perfiles .table table th {
+  text-align: left;
+  font-size: 12px;
+}
+.container .header .contenido .second-row .perfiles .table table td {
+  padding: 8px 0;
+}
+.container .header .contenido .second-row .perfiles .table table .profile {
+  display: flex;
+  align-items: center;
+}
+.container .header .contenido .second-row .perfiles .table table .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container .header .contenido .second-row .perfiles .table table .closed {
+  font-weight: bold;
+  color: #cacaca;
+}
+.container .header .contenido .second-row .perfiles .table table .type {
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+.container .header .contenido .second-row .perfiles .table table .type span {
+  background: #ccc;
+  padding: 1px 10px;
+  border-radius: 20px;
+}
+.container .header .contenido .second-row .perfiles .table table .type span.premium {
+  background: #ffb07b;
+}
+.container .header .contenido .second-row .perfiles .table table .type span.nopremium {
+  background: #887bff;
+}
+.container .header .contenido .second-row .prices {
+  box-shadow: 1px 2px 5px 0px #e7e7e7;
+  display: grid;
+  padding: 10px;
+  grid-template-rows: repeat(3, 1fr);
+}
+.container .header .contenido .second-row .prices .price {
+  transition: 0.3s ease all;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  color: #fff;
+  padding: 10px;
+}
+.container .header .contenido .second-row .prices .price:hover {
+  box-shadow: 2px 2px 5px 1px #cccccc;
+  cursor: pointer;
+}
+.container .header .contenido .second-row .prices .price .card-info {
+  display: flex;
+  flex-direction: column;
+}
+.container .header .contenido .second-row .prices .price .card-info .titulo {
+  font-weight: bold;
+}
+.container .header .contenido .second-row .prices .price .card-info .precio {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 7px 0px;
+}
+.container .header .contenido .second-row .prices .price .card-info .mes {
+  font-size: 14px;
+}
+.container .header .contenido .second-row .prices .price .resaltado {
+  font-size: 40px;
+  opacity: 0.3;
+  font-weight: bold;
+}
+.container .header .contenido .second-row .prices .price .resaltado span {
+  font-size: 14px;
+}
+.container .header .contenido .second-row .prices .price.uno {
+  background: #fc84f4;
+  background: linear-gradient(90deg, #fc84f4 34%, #977dfe 68%);
+}
+.container .header .contenido .second-row .prices .price.dos {
+  background: #c2f969;
+  background: linear-gradient(90deg, #c2f969 27%, #dcd66b 57%, #faae6d 86%);
+}
+.container .header .contenido .second-row .prices .price.tres {
+  background: #45a4fd;
+  background: linear-gradient(90deg, #45a4fd 24%, #37e5e5 66%);
+}
+
+.active {
+  background: #f2f2f2;
+}
+
+/*# sourceMappingURL=estilos.css.map */
