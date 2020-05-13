@@ -2,6 +2,13 @@
   font-size: 16px;
   padding: 0 15px;
 }
+.fas.activate {
+  font-size: 22px;
+}
+
+.fa.activate {
+  font-size: 20px;
+}
 
 .fa-home {
   color: #ff8888;
@@ -113,6 +120,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 568px) {
+  .first-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .second-row {
+    grid-template-columns: 1fr !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -122,6 +138,10 @@ input:checked + .slider:before {
 .container {
   display: grid;
   grid-template-columns: 20% 1fr;
+  transition: 0.3s ease all;
+}
+.container.responsive {
+  grid-template-columns: 10% 1fr;
 }
 .container .dashboard {
   display: flex;
@@ -143,17 +163,34 @@ input:checked + .slider:before {
 .container .dashboard .head .fa-bars:hover {
   cursor: pointer;
 }
-.container .dashboard a {
-  padding: 12px 10px;
+.container .dashboard .enlace {
+  display: flex;
+  padding: 10px;
+}
+.container .dashboard .enlace.active {
+  background: #f2f2f2;
+}
+.container .dashboard .enlace.activo {
+  flex-direction: column;
+  align-items: center;
+}
+.container .dashboard .enlace.activo a {
+  display: none;
+}
+.container .dashboard .enlace.activo .fas {
+  font-size: 22px;
+}
+.container .dashboard .enlace:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.container .dashboard .enlace a {
   text-decoration: none;
 }
-.container .dashboard a {
+.container .dashboard .enlace a {
   font-family: "Roboto";
   color: #85869d;
   font-size: 13px;
-}
-.container .dashboard a:hover {
-  background: #f2f2f2;
 }
 .container .dashboard .title {
   color: #85869d;
@@ -293,6 +330,9 @@ input:checked + .slider:before {
 .container .header .contenido .second-row .perfiles .table table th {
   text-align: left;
   font-size: 12px;
+}
+.container .header .contenido .second-row .perfiles .table table tr:hover {
+  background: #fcfcfc;
 }
 .container .header .contenido .second-row .perfiles .table table td {
   padding: 8px 0;

@@ -1,6 +1,14 @@
 .fas {
     font-size: 16px;
     padding: 0 15px;
+    &.activate{
+        font-size: 22px;
+    }
+}
+.fa{
+    &.activate{
+        font-size: 20px;
+    }
 }
 .fa-home {
     color: #ff8888;

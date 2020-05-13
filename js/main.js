@@ -25,6 +25,14 @@ const rows = [
     },
 ]
 
+const responsiveScreen = () => {
+    const width = window.innerWidth;
+    console.log('width actual', width)
+    if (width < 568) {
+        return true;
+    }
+}
+
 const table_d = document.querySelector('#table');
 console.log(table_d)
 rows.forEach(row => {
@@ -46,13 +54,42 @@ rows.forEach(row => {
     table_d.appendChild(td);
 });
 
-const tag_a = document.querySelectorAll('.dashboard a');
+const tag_a = document.querySelectorAll('.dashboard .enlace');
 tag_a.forEach(tag => {
 
-
-
     tag.addEventListener('click', () => {
-        const dashboard = document.querySelector('.dashboard a.active').classList.remove('active');
+        const dashboard = document.querySelector('.dashboard .enlace.active').classList.remove('active');
         tag.classList.add('active');
     })
 })
+
+// ? Evento click para contraer los iconos
+const menu = document.getElementById('menu');
+const menu_responsive = document.querySelectorAll('.dashboard .enlace');
+const responsive = document.querySelector('.container');
+const enlances_fas = document.querySelectorAll('.enlace .fas');
+console.log(enlances_fas)
+
+menu.addEventListener('click', () => {
+
+    menu_responsive.forEach(element => {
+        element.classList.toggle('activo');
+
+        responsive.classList.toggle('responsive')
+    })
+})
+
+if (responsiveScreen()) {
+    console.log('este menu es reponsive')
+    const menu = document.getElementById('menu');
+
+
+    menu_responsive.forEach(element => {
+        element.classList.toggle('activo');
+
+        responsive.classList.toggle('responsive')
+    })
+
+}
+
+

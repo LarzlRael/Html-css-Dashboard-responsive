@@ -1,5 +1,8 @@
 @import "share";
 @import "switch";
+@import "media";
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,18 +11,21 @@
 .container {
     display: grid;
     grid-template-columns: 20% 1fr;
+    transition: .3s ease all;
+    &.responsive{
+        grid-template-columns: 10% 1fr;
+    }
     .dashboard {
-        
-        .head{
+        .head {
             padding: 10px;
             display: flex;
             align-items: center;
-            .title{
+            .title {
                 font-size: 17px;
             }
-            .fa-bars{
+            .fa-bars {
                 font-size: 18px;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
@@ -28,18 +34,37 @@
         flex-direction: column;
         background: #fff;
         box-shadow: 1px 2px 5px 0px rgba(231, 231, 231, 1);
-        a {
-            padding: 12px 10px;
-            text-decoration: none;
-        }
-        
-        a {
-            font-family: "Roboto";
-            color: #85869d;
-            font-size: 13px;
-            &:hover {
+        .enlace {
+            &.active{
                 background: #f2f2f2;
             }
+            display: flex;
+            padding: 10px;
+            &.activo{
+                flex-direction: column;
+                align-items: center;
+                a{
+                    display: none;
+                }
+                .fas{
+                    font-size: 22px;
+                }
+            }
+            &:hover {
+                background: #f2f2f2;
+                cursor: pointer;
+            }
+            a {
+                
+                text-decoration: none;
+            }
+
+            a {
+                font-family: "Roboto";
+                color: #85869d;
+                font-size: 13px;    
+            }
+            
         }
 
         .title {
@@ -189,9 +214,16 @@
                             th {
                                 text-align: left;
                                 font-size: 12px;
+                                
+                            }
+                            tr{
+                                &:hover{
+                                    background: #fcfcfc;
+                                }
                             }
                             td {
                                 padding: 8px 0;
+                                
                             }
                             .profile {
                                 display: flex;
