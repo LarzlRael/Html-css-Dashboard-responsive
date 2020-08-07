@@ -1,3 +1,22 @@
+.menu-responsive {
+  width: 100%;
+  padding: 20px;
+  display: none;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #977dfe;
+  font-size: 16px;
+  font-family: "arial";
+}
+.menu-responsive i {
+  color: #fff;
+}
+@media (min-width: 320px) and (max-width: 768PX) {
+  .menu-responsive {
+    display: flex;
+  }
+}
+
 .fas {
   font-size: 16px;
   padding: 0 15px;
@@ -120,15 +139,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-@media screen and (max-width: 568px) {
-  .first-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  .second-row {
-    grid-template-columns: 1fr !important;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -136,6 +146,10 @@ input:checked + .slider:before {
 }
 
 .container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
   display: grid;
   grid-template-columns: 20% 1fr;
   transition: 0.3s ease all;
@@ -143,11 +157,30 @@ input:checked + .slider:before {
 .container.responsive {
   grid-template-columns: 10% 1fr;
 }
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
 .container .dashboard {
   display: flex;
   flex-direction: column;
   background: #fff;
   box-shadow: 1px 2px 5px 0px #e7e7e7;
+}
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .dashboard {
+    position: absolute;
+    transition: 0.2s ease all;
+    transform: translate(-110%);
+    width: 70%;
+    opacity: 0.9;
+    height: 100vh;
+  }
+  .container .dashboard.active {
+    transform: translate(0%);
+  }
 }
 .container .dashboard .head {
   padding: 10px;
@@ -212,6 +245,7 @@ input:checked + .slider:before {
 .container .header .logo .informacion .nombre {
   font-weight: bold;
   font-size: 14px;
+  margin: 5px 0;
 }
 .container .header .logo .informacion .extra {
   color: #c8c7cf;
@@ -226,16 +260,43 @@ input:checked + .slider:before {
   align-items: center;
   padding: 20px;
 }
-.container .header .head .busqueda .input {
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .head {
+    flex-direction: column;
+    padding: 20px;
+    align-items: flex-start;
+  }
+}
+.container .header .head .search-bell {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .head .search-bell {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.container .header .head .search-bell .campanita i {
+  color: #977dfe;
+  font-size: 20px;
+}
+.container .header .head .search-bell .busqueda .input {
   border-radius: 30px;
   padding: 6px;
-  width: 300px;
+  width: 100%;
   border: 1px solid #ccc;
   font-family: "Roboto";
   font-size: 14px;
   color: gray;
 }
-.container .header .head .busqueda .input::-moz-placeholder {
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .head .search-bell .busqueda .input {
+    width: 150%;
+  }
+}
+.container .header .head .search-bell .busqueda .input::-moz-placeholder {
   /* Firefox 19+ */
   text-align: left;
 }
@@ -249,6 +310,12 @@ input:checked + .slider:before {
   grid-template-rows: minmax(250px, 1fr);
   padding: 20px;
   gap: 20px;
+}
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .contenido .first-row {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .container .header .contenido .first-row .chart {
   background: url("https://www.excel-easy.com/data-analysis/images/charts/column-chart.png");
@@ -297,6 +364,12 @@ input:checked + .slider:before {
   grid-template-rows: minmax(200px, 1fr);
   gap: 20px;
 }
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .contenido .second-row {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .container .header .contenido .second-row .perfiles {
   transition: 0.3s ease all;
   box-shadow: 1px 2px 5px 0px #e7e7e7;
@@ -324,12 +397,17 @@ input:checked + .slider:before {
   width: 100%;
   margin: auto;
 }
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .contenido .second-row .perfiles .table {
+    font-size: 10px;
+  }
+}
 .container .header .contenido .second-row .perfiles .table table {
   width: 100%;
 }
 .container .header .contenido .second-row .perfiles .table table th {
   text-align: left;
-  font-size: 12px;
+  font-size: 10px;
 }
 .container .header .contenido .second-row .perfiles .table table tr:hover {
   background: #fcfcfc;
@@ -360,6 +438,12 @@ input:checked + .slider:before {
   padding: 1px 10px;
   border-radius: 20px;
 }
+@media (min-width: 320px) and (max-width: 768PX) {
+  .container .header .contenido .second-row .perfiles .table table .type span {
+    font-size: 10px;
+    padding: 0px 5px;
+  }
+}
 .container .header .contenido .second-row .perfiles .table table .type span.premium {
   background: #ffb07b;
 }
@@ -368,9 +452,9 @@ input:checked + .slider:before {
 }
 .container .header .contenido .second-row .prices {
   box-shadow: 1px 2px 5px 0px #e7e7e7;
-  display: grid;
+  display: flex;
   padding: 10px;
-  grid-template-rows: repeat(3, 1fr);
+  flex-direction: column;
 }
 .container .header .contenido .second-row .prices .price {
   transition: 0.3s ease all;
@@ -381,6 +465,7 @@ input:checked + .slider:before {
   height: 100px;
   color: #fff;
   padding: 10px;
+  margin-bottom: 16px;
 }
 .container .header .contenido .second-row .prices .price:hover {
   box-shadow: 2px 2px 5px 1px #cccccc;

@@ -1,8 +1,37 @@
-@media screen and (max-width: 568px) {
-    .first-row {
-        grid-template-columns: 1fr !important;        
-    }
-    .second-row{
-        grid-template-columns: 1fr !important;        
+$breakpoint-sm: 320px;
+$breakpoint-md: 768PX;
+$breakpoint-lg: 1024PX;
+
+@mixin media($media) {
+    @if $media == xs {
+        @media (max-width: $breakpoint-sm) {
+            @content;
+        }
+    } @else if $media == sm {
+        @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+            @content;
+        }
+    } @else if $media == md {
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+            @content;
+        }
+    } @else if $media == lg {
+        @media (min-width: $breakpoint-lg) {
+            @content;
+        }
     }
 }
+
+//? poara poder usar se usa asi
+// * Variables para  usar 
+//? sm = 320px
+//? md = 768PX
+//? lg = 1024PX
+
+//? dentro de otros archivos
+
+// @include media(sm) {
+//      .codigo para poner{
+    
+        // }
+// }

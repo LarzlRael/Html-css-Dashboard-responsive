@@ -1,12 +1,32 @@
+@import "media";
+@import "variables";
+
+.menu-responsive {
+    width: 100%;
+    padding: 20px;
+    display: none;
+    justify-content: space-between;
+    color: $color-white;
+    background-color:$color-dashboard;
+    font-size: 16px;
+    font-family: "arial";
+    i {
+        color: $color-white;
+    }
+    @include media(sm) {
+        display: flex;
+    }
+}
+
 .fas {
     font-size: 16px;
     padding: 0 15px;
-    &.activate{
+    &.activate {
         font-size: 22px;
     }
 }
-.fa{
-    &.activate{
+.fa {
+    &.activate {
         font-size: 20px;
     }
 }
@@ -51,6 +71,6 @@
 .fa-bell {
     color: #7a6bff;
 }
-.fa-bars{
+.fa-bars {
     color: #a2a4c5;
 }
